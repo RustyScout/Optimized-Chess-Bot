@@ -1,6 +1,4 @@
-"""
-Handling the AI moves.
-"""
+
 import random
 
 piece_score = {"K": 0, "Q": 9, "R": 5, "B": 3, "N": 3, "p": 1}
@@ -98,9 +96,6 @@ def findMoveNegaMaxAlphaBeta(game_state, valid_moves, depth, alpha, beta, turn_m
 
 
 def scoreBoard(game_state):
-    """
-    Score the board. A positive score is good for white, a negative score is good for black.
-    """
     if game_state.checkmate:
         if game_state.white_to_move:
             return -CHECKMATE  # black wins
@@ -125,7 +120,4 @@ def scoreBoard(game_state):
 
 
 def findRandomMove(valid_moves):
-    """
-    Picks and returns a random valid move.
-    """
     return random.choice(valid_moves)
